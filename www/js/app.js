@@ -1,16 +1,15 @@
-// Ionic Starter App
 
-// angular.module is a global place for creating, registering and retrieving Angular modules
-// 'starter' is the name of this angular module example (also set in a <body> attribute in index.html)
-// the 2nd parameter is an array of 'requires'
-// 'starter.services' is found in services.js
-// 'starter.controllers' is found in controllers.js
-angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
+angular.module('whatsapp', [
+  'ionic', 
   'whatsapp.contacts', 
   'whatsapp.conversations', 
   'whatsapp.conversation', 
+  'whatsapp.users',
+  'whatsapp.users.login',
+  'whatsapp.users.signup'
+])
 
-.run(function($ionicPlatform) {
+.run(function($ionicPlatform, $rootScope, $location, LoginModel) {
   $ionicPlatform.ready(function() {
     // Hide the accessory bar by default (remove this to show the accessory bar above the keyboard
     // for form inputs)
@@ -23,6 +22,21 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
       // org.apache.cordova.statusbar required
       StatusBar.styleDefault();
     }
+
+    // TODO (?) : handle last url 
+
+    $rootScope.$on("$ionicView.beforeEnter", function(event, before) {
+
+      if(! LoginModel.isUserConnected() && before.stateId !== "signup") {
+        console.log("You are not connected")
+        event.preventDefault();
+        $location.path('/login');
+      } else {
+        console.log("You are connected")
+      }
+
+    });
+
   });
 })
 
@@ -36,10 +50,10 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
 
   // setup an abstract state for the tabs directive
     .state('tab', {
-    url: '/tab',
-    abstract: true,
-    templateUrl: 'templates/tabs.html'
-  })
+      url: '/tab',
+      abstract: true,
+      templateUrl: 'templates/tabs.html'
+    })
 
   // Each tab has its own nav history stack:
 
@@ -83,17 +97,29 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
     }
   })
 
+  .state('login', {
+    url: '/login',
+    templateUrl: 'templates/users/login/login.html',
+    controller: 'LoginController as vm'
+  })
+
+  .state('signup', {
+    url: '/signup',
+    templateUrl: 'templates/users/signup/signup.html',
+    controller: 'SignUpController as vm'
+  })
+
   .state('tab.account', {
     url: '/account',
     views: {
       'tab-account': {
-        templateUrl: 'templates/tab-account.html',
-        controller: 'AccountCtrl'
+        templateUrl: 'templates/users/tab-account.html',
+        controller: 'LoginController as vm'
       }
     }
   });
 
   // if none of the above states are matched, use this as the fallback
-  $urlRouterProvider.otherwise('/tab/dash');
+  $urlRouterProvider.otherwise('/tab/contacts');
 
 });
