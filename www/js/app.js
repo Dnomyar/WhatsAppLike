@@ -6,6 +6,7 @@
 // 'starter.services' is found in services.js
 // 'starter.controllers' is found in controllers.js
 angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
+  'whatsapp.contacts', 
 
 .run(function($ionicPlatform) {
   $ionicPlatform.ready(function() {
@@ -40,12 +41,12 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
 
   // Each tab has its own nav history stack:
 
-  .state('tab.dash', {
-    url: '/dash',
+  .state('tab.contacts', {
+    url: '/contacts',
     views: {
-      'tab-dash': {
-        templateUrl: 'templates/tab-dash.html',
-        controller: 'DashCtrl'
+      'tab-contacts': {
+        templateUrl: 'templates/contacts/tab-contacts.html',
+        controller: 'ContactsController as vm'
       }
     }
   })
