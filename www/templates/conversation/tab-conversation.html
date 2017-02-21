@@ -1,0 +1,69 @@
+<ion-view view-title="{{vm.conversation.name}}">
+
+
+    <ion-content has-bouncing="true" class="has-header has-footer" 
+              delegate-handle="userMessageScroll">
+            
+              <div ng-repeat="message in vm.conversation.messages | orderBy: '-created'" class="message-wrapper"
+                  on-hold="onMessageHold($event, $index, message)">
+      
+                  <div ng-if="vm.user._id !== message.user">
+                      
+                    <!--<img ng-click="viewProfile(message)" class="profile-pic left" 
+                          ng-src="{{toUser.pic}}" onerror="onProfilePicError(this)" />-->
+      
+                      <div class="chat-bubble left">
+      
+                          <div class="message">
+                            {{message.message}}
+                          </div>
+      
+                          <div class="message-detail">
+                              <span ng-click="viewProfile(message)" 
+                                  class="bold">{{message.userName}}</span>
+                              <!--<span am-time-ago="message.created"></span>-->
+                          </div>
+      
+                      </div>
+                  </div>
+      
+                  <div ng-if="vm.user._id === message.user">
+                    
+                       <!--<img ng-click="viewProfile(message)" class="profile-pic right" 
+                          ng-src="{{user.pic}}" onerror="onProfilePicError(this)" />-->
+                    
+                      <div class="chat-bubble right">
+      
+                          <div class="message">
+                            {{message.message}}
+                          </div>
+      
+                          <div class="message-detail">
+                              <span ng-click="viewProfile(message)" 
+                                  class="bold">{{message.userName}}</span>
+                              <!--<span am-time-ago="message.created"></span>-->
+                          </div>
+      
+                      </div>
+                    
+                  </div>
+      
+                  <div class="cf"></div>
+      
+              </div>
+
+          </ion-content>
+
+          <form name="sendMessageForm" ng-submit="vm.sendMessage()" novalidate>
+              <ion-footer-bar class="bar-stable item-input-inset message-footer" keyboard-attach>
+                  <label class="item-input-wrapper">
+                      <textarea ng-model="vm.input.message" value="" placeholder="Send {{toUser.username}} a message..." required minlength="1" maxlength="1500" msd-elastic></textarea>
+                  </label>
+                  <div class="footer-btn-wrap">
+                    <button class="button button-icon icon ion-android-send footer-btn" type="submit"
+                        ng-disabled="!vm.input.message || vm.input.message === ''">
+                    </button>
+                  </div>
+              </ion-footer-bar>
+          </form>
+</ion-view>

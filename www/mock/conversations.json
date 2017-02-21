@@ -1,0 +1,56 @@
+[
+  {
+    "id": 1,
+    "name": "fugiat",
+    "picture": "http://lorempixel.com/100/100",
+    "isPrivate": true,
+    "messages": [
+      {
+        "user": "589b44b29d2eba4019bcab94",
+        "message": "Enim cillum anim do irure irure fugiat anim nisi. Ipsum tempor magna magna ullamco non Lorem eiusmod irure consequat incididunt ut irure id nulla. Voluptate do sit sint voluptate deserunt est ad tempor sunt eu velit laborum mollit.\r\n",
+        "created": "2016-04-12T09:05:48 -02:00"
+      },
+      {
+        "user": "589b44b2fd42e47ea59970bc",
+        "message": "Cupidatat laborum laboris excepteur dolore do aliqua proident culpa Lorem. Incididunt incididunt consequat minim cupidatat ipsum consequat qui excepteur voluptate aliqua nulla velit veniam cillum. Qui ipsum dolore exercitation anim ex consequat amet. Exercitation est nulla esse consectetur eu reprehenderit laborum. Proident officia dolore voluptate dolore aute. Pariatur aliquip labore dolor nisi ut excepteur duis sint minim sint anim laborum.\r\n",
+        "created": "2014-12-15T03:41:44 -01:00"
+      }
+    ]
+  },
+  {
+    "id": 2,
+    "name": "reprehenderit",
+    "picture": "http://lorempixel.com/100/100",
+    "isPrivate": false,
+    "messages": [
+      {
+        "user": "589b44b29d2eba4019bcab94",
+        "message": "Voluptate eu aliqua sunt ad enim aliqua nostrud aliqua ea eu magna dolor ullamco aliquip. Adipisicing aliqua occaecat et est. Commodo dolor non esse eiusmod anim ea cupidatat ad cillum Lorem esse. Ex eu qui aute duis veniam commodo proident reprehenderit enim do. Officia sint cillum aliqua labore laboris fugiat dolor. Consequat sit voluptate consectetur laboris reprehenderit.\r\n",
+        "created": "2014-12-15T02:58:54 -01:00"
+      },
+      {
+        "user": "589b24e03d59ae29836e3c4e",
+        "message": "Minim cillum magna dolore sint nisi elit nostrud. Consequat exercitation esse adipisicing mollit consectetur sunt ex ad eiusmod. Enim irure voluptate Lorem veniam labore nisi anim. Excepteur commodo Lorem occaecat id do aliqua quis amet ea. Lorem aliquip ad cillum reprehenderit eiusmod labore incididunt.\r\n",
+        "created": "2016-11-03T02:48:58 -01:00"
+      },
+      {
+        "user": "589b44b2fd42e47ea59970bc",
+        "message": "Est consequat dolor occaecat nostrud laborum laborum voluptate velit do eiusmod velit sunt. Elit proident tempor occaecat consectetur. Esse sunt sunt ad occaecat esse. Do amet amet commodo occaecat nostrud aute.\r\n",
+        "created": "2015-05-09T05:10:04 -02:00"
+      }
+    ]
+  },
+  {
+    "id": 3,
+    "name": "consequat",
+    "picture": "http://lorempixel.com/100/100",
+    "isPrivate": false,
+    "messages": [
+      {
+        "user": "589b24e03d59ae29836e3c4e",
+        "message": "Id eu eu dolore sit quis dolore est in sint occaecat exercitation irure voluptate adipisicing. Non voluptate excepteur velit laborum proident culpa non. Nulla labore fugiat cupidatat culpa commodo magna minim ad culpa proident pariatur aliqua eu laborum. Non qui adipisicing proident reprehenderit minim adipisicing sunt voluptate excepteur. Do amet aute aute elit sit commodo consequat veniam quis officia et. Reprehenderit est duis quis do velit anim. Sint elit in deserunt exercitation laboris eu.\r\n",
+        "created": "2014-04-30T02:48:13 -02:00"
+      }
+    ]
+  }
+]

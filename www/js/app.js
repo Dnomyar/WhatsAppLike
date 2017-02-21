@@ -7,6 +7,8 @@
 // 'starter.controllers' is found in controllers.js
 angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
   'whatsapp.contacts', 
+  'whatsapp.conversations', 
+  'whatsapp.conversation', 
 
 .run(function($ionicPlatform) {
   $ionicPlatform.ready(function() {
@@ -51,24 +53,35 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
     }
   })
 
-  .state('tab.chats', {
-      url: '/chats',
-      views: {
-        'tab-chats': {
-          templateUrl: 'templates/tab-chats.html',
-          controller: 'ChatsCtrl'
-        }
+  .state('tab.conversations', {
+    url: '/conversations',
+    views: {
+      'tab-conversations': {
+        templateUrl: 'templates/conversations/tab-conversations.html',
+        controller: 'ConversationsController as vm'
       }
-    })
-    .state('tab.chat-detail', {
-      url: '/chats/:chatId',
-      views: {
-        'tab-chats': {
-          templateUrl: 'templates/chat-detail.html',
-          controller: 'ChatDetailCtrl'
-        }
+    }
+  })
+
+  .state('tab.conversation-detail', {
+    url: '/conversations/:conversationId',
+    views: {
+      'tab-conversations': {
+        templateUrl: 'templates/conversation/tab-conversation.html',
+        controller: 'ConversationController as vm'
       }
-    })
+    }
+  })
+
+  .state('tab.conversation-add', {
+    url: '/add-conversations',
+    views: {
+      'tab-conversations': {
+        templateUrl: 'templates/conversations/add-conversation.html',
+        controller: 'AddConversationsController as vm'
+      }
+    }
+  })
 
   .state('tab.account', {
     url: '/account',

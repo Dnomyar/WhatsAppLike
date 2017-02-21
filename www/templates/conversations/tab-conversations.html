@@ -1,0 +1,24 @@
+<ion-view view-title="Conversations">
+  <ion-nav-buttons side="right">
+    <a class="button button-clear ion-plus-round" href="#/tab/add-conversations"></a>
+  </ion-nav-buttons>
+  <ion-content>
+    <ion-list>
+      <ion-item class="item-remove-animate item-avatar item-icon-right" 
+                ng-repeat="conversation in vm.conversations" 
+                type="item-text-wrap" 
+                href="#/tab/conversations/{{conversation.id}}">
+
+        <!--<img ng-src="{{conversation.picture}}">-->
+        <h2>{{conversation.name}}</h2>
+        <p>{{(conversation.messages | orderBy: 'created')[0].message}}</p>
+        <i class="icon ion-chevron-right icon-accessory"></i>
+        <!--<i class="icon ion-chevron-right icon-accessory"></i>-->
+
+        <!--<ion-option-button class="button-assertive" ng-click="remove(contact)">
+          Delete
+        </ion-option-button>-->
+      </ion-item>
+    </ion-list>
+  </ion-content>
+</ion-view>

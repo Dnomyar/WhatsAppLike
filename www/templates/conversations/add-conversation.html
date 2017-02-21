@@ -1,0 +1,36 @@
+<ion-view view-title="New conversation">
+  <ion-nav-buttons side="right">
+    <a class="button button-clear" ng-click="vm.addConversation()">Ajouter</a>
+  </ion-nav-buttons>
+  <ion-content>
+    <ul class="list">
+      <li>
+        <label class="item item-input">
+          <!--<i class="icon ion-search placeholder-icon"></i>-->
+          <input type="text" placeholder="Nom" ng-model="vm.name">
+        </label>
+      </li>
+      <li>
+        <label class="item item-input">
+          <!--<i class="icon ion-search placeholder-icon"></i>-->
+          <input type="text" placeholder="Description" ng-model="vm.description">
+        </label>
+      </li>
+      <li class="item item-toggle">
+        Privée
+        <label class="toggle toggle-assertive">
+          <input type="checkbox" ng-model="vm.isPrivate">
+          <div class="track">
+            <div class="handle"></div>
+          </div>
+        </label>
+      </li>
+      <li>
+        <ion-list ng-repeat="user in vm.users">
+          <ion-checkbox ng-model="user.isSelected">{{user.firstName}} {{user.lastName}}</ion-checkbox>
+        </ion-list>
+      </li>
+    </ul>
+    
+  </ion-content>
+</ion-view>
